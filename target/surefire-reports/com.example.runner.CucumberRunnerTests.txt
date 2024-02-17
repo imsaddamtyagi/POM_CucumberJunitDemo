@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: com.example.runner.CucumberRunnerTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 123.335 s <<< FAILURE! - in com.example.runner.CucumberRunnerTests
+Login to HRM Application.Login with valid credentials  Time elapsed: 34.377 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at com.example.definitions.LoginPageDefinitions.verifyLogin(LoginPageDefinitions.java:37)
+	at ✽.User should be able to login sucessfully and new page open(file:///C:/Users/Husain/eclipse-workspace/POM_CucumberJunitDemo/src/test/resources/features/LoginPage.feature:9)
+
+Login to HRM Application.Login with blank username  Time elapsed: 16.101 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<Required[]> but was:<Required[1]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at com.example.definitions.LoginPageDefinitions.verifyMissingUsernameMessage(LoginPageDefinitions.java:52)
+	at ✽.User should be able to see a message "Required1" below Username(file:///C:/Users/Husain/eclipse-workspace/POM_CucumberJunitDemo/src/test/resources/features/LoginPage.feature:25)
+
