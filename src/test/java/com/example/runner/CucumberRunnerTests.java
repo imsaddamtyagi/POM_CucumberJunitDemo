@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
  
 @RunWith(Cucumber.class)
 @CucumberOptions(tags = "", features = "src/test/resources/features/LoginPage.feature", glue = "com.example.definitions",
-                 plugin = {})
+                 plugin = {"pretty"})
     
 public class CucumberRunnerTests {
     

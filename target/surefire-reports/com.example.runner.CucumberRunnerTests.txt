@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.example.runner.CucumberRunnerTests
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 123.335 s <<< FAILURE! - in com.example.runner.CucumberRunnerTests
-Login to HRM Application.Login with valid credentials  Time elapsed: 34.377 s  <<< FAILURE!
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 120.046 s <<< FAILURE! - in com.example.runner.CucumberRunnerTests
+Login to HRM Application.Login with valid credentials  Time elapsed: 61.271 s  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:87)
 	at org.junit.Assert.assertTrue(Assert.java:42)
@@ -10,7 +10,7 @@ java.lang.AssertionError
 	at com.example.definitions.LoginPageDefinitions.verifyLogin(LoginPageDefinitions.java:37)
 	at ✽.User should be able to login sucessfully and new page open(file:///C:/Users/Husain/eclipse-workspace/POM_CucumberJunitDemo/src/test/resources/features/LoginPage.feature:9)
 
-Login to HRM Application.Login with blank username  Time elapsed: 16.101 s  <<< FAILURE!
+Login to HRM Application.Login with blank username  Time elapsed: 10.575 s  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<Required[]> but was:<Required[1]>
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
