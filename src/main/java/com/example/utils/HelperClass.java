@@ -16,8 +16,9 @@ public class HelperClass {
                 
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
             driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
+            
          }      
                    
         public static void openPage(String url) {
@@ -39,8 +40,8 @@ public class HelperClass {
         public static void tearDown() {
                 
             if(driver!=null) {
-                 driver.close();
-                 driver.quit();
+                // driver.close();
+                 //driver.quit();
             }
                 
            helperClass = null;

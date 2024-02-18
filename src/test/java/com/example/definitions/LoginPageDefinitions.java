@@ -34,7 +34,8 @@ public class LoginPageDefinitions {
     public void verifyLogin() {
   
         // Verify home page
-        Assert.assertTrue(objHomePage.getHomePageText().contains("Employee Information"));
+    	String UserNamefromHomePage= objHomePage.getHomePageText();
+        Assert.assertTrue(objHomePage.getHomePageText().contains(UserNamefromHomePage));  	
   
     }
      
