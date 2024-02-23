@@ -16,6 +16,8 @@ LoginPageLocators loginPageLocators = null;
         PageFactory.initElements(HelperClass.getDriver(),loginPageLocators);
     }
   
+ 
+    
     // Set user name in textbox
     public void setUserName(String strUserName) {
         loginPageLocators.userName.sendKeys(strUserName);
@@ -28,7 +30,7 @@ LoginPageLocators loginPageLocators = null;
   
     // Click on login button
     public void clickLogin() {
-        loginPageLocators.login.click();
+        loginPageLocators.LoginBtn.click();
     }
   
      
@@ -41,10 +43,12 @@ LoginPageLocators loginPageLocators = null;
     public String getErrorMessage() {
         return loginPageLocators.errorMessage.getText();
     }
+    
   
     public void login(String strUserName, String strPassword) {
   
-        // Fill user name
+      
+    	// Fill user name
         this.setUserName(strUserName);
   
         // Fill password
