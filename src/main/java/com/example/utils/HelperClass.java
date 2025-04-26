@@ -3,7 +3,6 @@ package com.example.utils;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
  
 public class HelperClass {
  
@@ -14,7 +13,6 @@ public class HelperClass {
            
          private HelperClass() {
                 
-            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
