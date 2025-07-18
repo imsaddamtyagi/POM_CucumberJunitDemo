@@ -14,10 +14,11 @@ public class LoginPageDefinitions {
     HomePageActions objHomePage = new HomePageActions();
     
     @Given("User is on HRMLogin page {string}")
-    public void loginTest(String url) 
+    public void loginTest(String url) throws InterruptedException 
     {
          
         HelperClass.openPage(url);
+        Thread.sleep(10000);;
   
     }
   

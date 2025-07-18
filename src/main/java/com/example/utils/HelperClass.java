@@ -1,6 +1,6 @@
 package com.example.utils;
 
-import java.time.Duration;
+//import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
  
@@ -9,13 +9,13 @@ public class HelperClass {
      private static HelperClass helperClass;
       
         private static WebDriver driver;
-        public final static int TIMEOUT = 10;
+       // public final static int TIMEOUT = 1;
            
          private HelperClass() {
                 
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
+        //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
             
          }      
                    
