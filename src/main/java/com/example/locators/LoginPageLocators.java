@@ -1,25 +1,15 @@
 package com.example.locators;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
- 
-public class LoginPageLocators {
- 
+import org.openqa.selenium.By;
 
-	   
-    @FindBy(xpath = "//input[@name='email']")
-    public WebElement userName;
-  
-    @FindBy(xpath = "//input[@name='password']")
-    public WebElement password;
-     
-    @FindBy(xpath = "//div[text()='Something went wrong...']")
-    public WebElement missingUsernameErrorMessage;
-     
-    @FindBy(xpath = "//div[text()='Login']")
-    public WebElement LoginBtn;
-  
-    @FindBy(xpath = "//div[text()='Something went wrong...']")
-    public  WebElement errorMessage;
-        
+public class LoginPageLocators {
+	
+	
+	public static final By proceed =              By.xpath("//*[@id='details-button']");
+	public static final By proceedlink =          By.xpath("//*[@id='proceed-link']");
+    public static final By userName =             By.xpath("//input[@name='email']");
+    public static final By password =             By.xpath("//input[@name='password']");
+    public static final By loginBtn =             By.xpath("//div[text()='Login']");
+    public static final By missingUsernameError = By.xpath("//div[text()='Something went wrong...']");
+    public static final By errorMessage = By.xpath("//div[text()='Something went wrong...']");
 }

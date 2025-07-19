@@ -4,55 +4,47 @@ import org.junit.Assert;
 import com.example.actions.HomePageActions;
 import com.example.actions.LoginPageActions;
 import com.example.utils.HelperClass;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
- 
+
 public class LoginPageDefinitions {
- 
-    LoginPageActions objLogin = new LoginPageActions();
-    HomePageActions objHomePage = new HomePageActions();
-    
-    @Given("User is on HRMLogin page {string}")
-    public void loginTest(String url) throws InterruptedException 
-    {
-         
-        HelperClass.openPage(url);
-        Thread.sleep(10000);;
-  
+
+    private LoginPageActions objLogin;
+    private HomePageActions objHomePage;
+
+    @Before
+    public void setUp() {
+        objLogin = new LoginPageActions();
+        objHomePage = new HomePageActions();
     }
-  
+
+    @Given("User is on HRMLogin page {string}")
+    public void loginTest(String url) {
+        HelperClass.openPage(url);
+    }
+
     @When("User enters username as {string} and password as {string}")
     public void goToHomePage(String userName, String passWord) {
-  
-        // login to application
         objLogin.login(userName, passWord);
-  
-        // go the next page
-         
     }
-     
-    @Then("User should be able to login sucessfully and new page open")
+
+    @Then("User should be able to login successfully and new page open")
     public void verifyLogin() {
-  
-        // Verify home page
-    	String UserNamefromHomePage= objHomePage.getHomePageText();
-        Assert.assertTrue(objHomePage.getHomePageText().contains(UserNamefromHomePage));  	
-  
+        String userText = objHomePage.getHomePageText();
+        Assert.assertTrue("Homepage did not contain user text!", userText.contains(userText));
     }
-     
+
     @Then("User should be able to see error message {string}")
     public void verifyErrorMessage(String expectedErrorMessage) {
-  
-        // Verify home page
-        Assert.assertEquals(objLogin.getErrorMessage(),expectedErrorMessage);
-  
+        String actualError = objLogin.getErrorMessage();
+        Assert.assertEquals("Error message mismatch!", expectedErrorMessage, actualError);
     }
-     
+
     @Then("User should be able to see a message {string} below Username")
     public void verifyMissingUsernameMessage(String message) {
-         
-        Assert.assertEquals(objLogin.getMissingUsernameText(),message);
+        String actualMessage = objLogin.getMissingUsernameText();
+        Assert.assertEquals("Missing username message mismatch!", message, actualMessage);
     }
-       
 }

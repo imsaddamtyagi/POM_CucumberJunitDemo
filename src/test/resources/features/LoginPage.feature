@@ -6,7 +6,7 @@ Feature: Login to HRM Application
   @ValidCredentials
   Scenario: Login with valid credentials
     When User enters username as "husainahamad055@gmail.com" and password as "Kaalo@1234"
-    Then User should be able to login sucessfully and new page open
+    Then User should be able to login successfully and new page open
 
  # @InvalidCredentials
  # Scenario Outline: Login with invalid credentials

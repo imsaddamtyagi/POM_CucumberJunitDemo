@@ -1,59 +1,52 @@
 package com.example.actions;
 
-import java.time.Duration;
-import java.util.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.FluentWait;
 import com.example.locators.LoginPageLocators;
-import com.example.utils.HelperClass;
+import com.example.utils.WaitUtils;
 
 public class LoginPageActions {
 
-    LoginPageLocators loginPageLocators = null;
-    WebDriver driver;
-
-    public LoginPageActions() {
-        this.driver = HelperClass.getDriver();
-        loginPageLocators = new LoginPageLocators();
-        PageFactory.initElements(driver, loginPageLocators);
-    }
-
+    private final int fluentWaitTime = 20;
     
-    private WebElement fluentWait(WebElement element, int timeoutSeconds) {
-        FluentWait<WebDriver> wait = new FluentWait<>(driver)
-            .withTimeout(Duration.ofSeconds(timeoutSeconds))
-            .pollingEvery(Duration.ofMillis(500))
-            .ignoring(NoSuchElementException.class);
-
-        return wait.until(webDriver -> element.isDisplayed() ? element : null);
+    
+    // 🚪 Click proceed
+    public void clickProceed() {
+        WaitUtils.fluentWait(LoginPageLocators.proceed, fluentWaitTime).click();
     }
     
-    
-    
+    // 🚪 Click proceedLink
+    public void clickProceedLink() {
+        WaitUtils.fluentWait(LoginPageLocators.proceedlink, fluentWaitTime).click();
+    }
 
+    // 🧪 Input username
     public void setUserName(String strUserName) {
-        fluentWait(loginPageLocators.userName, 10).sendKeys(strUserName);
+        WaitUtils.fluentWait(LoginPageLocators.userName, fluentWaitTime).sendKeys(strUserName);
     }
 
+    // 🔒 Input password
     public void setPassword(String strPassword) {
-        fluentWait(loginPageLocators.password, 10).sendKeys(strPassword);
+        WaitUtils.fluentWait(LoginPageLocators.password, fluentWaitTime).sendKeys(strPassword);
     }
 
+    // 🚪 Click login
     public void clickLogin() {
-        fluentWait(loginPageLocators.LoginBtn, 10).click();
+        WaitUtils.fluentWait(LoginPageLocators.loginBtn, fluentWaitTime).click();
     }
 
+    // ❌ Read missing username error
     public String getMissingUsernameText() {
-        return fluentWait(loginPageLocators.missingUsernameErrorMessage, 10).getText();
+        return WaitUtils.fluentWait(LoginPageLocators.missingUsernameError, fluentWaitTime).getText();
     }
 
+    // ⚠️ Read generic error
     public String getErrorMessage() {
-        return fluentWait(loginPageLocators.errorMessage, 10).getText();
+        return WaitUtils.fluentWait(LoginPageLocators.errorMessage, fluentWaitTime).getText();
     }
 
+    // 🔐 Full login sequence
     public void login(String strUserName, String strPassword) {
+    	clickProceed();
+    	clickProceedLink();
         setUserName(strUserName);
         setPassword(strPassword);
         clickLogin();
