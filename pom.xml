@@ -6,19 +6,23 @@
   <version>0.0.1-SNAPSHOT</version>
   
   
+  
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cucumber.version>7.26.0</cucumber.version>
+        <cucumberjunitengine.version>7.26.0</cucumberjunitengine.version>
+        <junitjupiterengine.version>5.13.4</junitjupiterengine.version>
+        <junitsuite.version>1.13.0</junitsuite.version>
         <selenium.version>4.34.0</selenium.version>
-        <junit.version>4.13.2</junit.version>
         <slf4j.version>2.1.0-alpha1</slf4j.version>
-        <apache.common.version>2.4</apache.common.version>
+        <commonio.version>2.20.0</commonio.version>
         <maven.compiler.plugin.version>3.14.0</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>3.5.3</maven.surefire.plugin.version>
         <maven.compiler.source.version>21</maven.compiler.source.version>
         <maven.compiler.target.version>21</maven.compiler.target.version>
         <extentreports.cucumber7.adapter.version>1.14.0</extentreports.cucumber7.adapter.version>
         <extentreports.version>5.1.2</extentreports.version>
+        <jna.version>5.17.0</jna.version>
     </properties>
 
     <dependencies>
@@ -30,10 +34,31 @@
  
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber.version}</version>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumberjunitengine.version}</version>
             <scope>test</scope>
         </dependency>
+        
+         
+        <!-- JUnit Jupiter -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junitjupiterengine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        
+        
+    <dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-suite</artifactId>
+     <version>${junitsuite.version}</version>
+    <scope>test</scope>
+   </dependency>
+
+
+ 
  
         <!-- Selenium -->
         <dependency>
@@ -41,21 +66,15 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
- 
-        <!-- JUnit 4 -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
- 
-        <!-- Apache Common -->
-        <dependency>
-            <groupId>org.apache.directory.studio</groupId>
-            <artifactId>org.apache.commons.io</artifactId>
-            <version>${apache.common.version}</version>
-        </dependency>
+        
+        
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+        <version>${commonio.version}</version>
+</dependency>
+
 
        <dependency>
             <groupId>org.slf4j</groupId>
@@ -76,6 +95,13 @@
             <artifactId>extentreports</artifactId>
             <version>${extentreports.version}</version>
         </dependency>
+        
+        <dependency>
+    <groupId>net.java.dev.jna</groupId>
+    <artifactId>jna</artifactId>
+    <version>${jna.version}</version>
+</dependency>
+
         
     </dependencies>
  

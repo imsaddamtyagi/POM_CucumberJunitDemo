@@ -1,6 +1,7 @@
 package com.example.definitions;
 
-import org.junit.Assert;
+
+import org.junit.jupiter.api.Assertions;
 import com.example.actions.HomePageActions;
 import com.example.actions.LoginPageActions;
 import com.example.utils.HelperClass;
@@ -32,19 +33,23 @@ public class LoginPageDefinitions {
 
     @Then("User should be able to login successfully and new page open")
     public void verifyLogin() {
-        String userText = objHomePage.getHomePageText();
-        Assert.assertTrue("Homepage did not contain user text!", userText.contains(userText));
+    	String userText = objHomePage.getHomePageText();
+    	String expectedText = "Mohd Ahmad";
+    	Assertions.assertTrue(userText.contains(expectedText), "Homepage did not contain expected text!");
+
     }
 
     @Then("User should be able to see error message {string}")
     public void verifyErrorMessage(String expectedErrorMessage) {
-        String actualError = objLogin.getErrorMessage();
-        Assert.assertEquals("Error message mismatch!", expectedErrorMessage, actualError);
+    	String actualError = objLogin.getErrorMessage();
+    	Assertions.assertEquals(expectedErrorMessage, actualError, "Error message mismatch!");
+
     }
 
     @Then("User should be able to see a message {string} below Username")
     public void verifyMissingUsernameMessage(String message) {
-        String actualMessage = objLogin.getMissingUsernameText();
-        Assert.assertEquals("Missing username message mismatch!", message, actualMessage);
+    	String actualMessage = objLogin.getMissingUsernameText();
+    	Assertions.assertEquals(message, actualMessage, "Missing username message mismatch!");
+
     }
 }
