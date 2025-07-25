@@ -4,9 +4,15 @@ Feature: Login to HRM Application
     Given User is on HRMLogin page "https://ui.freecrm.com"
 
   @ValidCredentials
-  Scenario: Login with valid credentials
-    When User enters username as "husainahamad055@gmail.com" and password as "Kaalo@1234"
+  Scenario Outline: Login with valid credentials
+    When User enters username as "<username>" and password as "<password>"
     Then User should be able to login successfully and new page open
+    
+      Examples:
+    | username                   | password   |
+    | husainahamad055@gmail.com  | Kaalo@1234 |
+    | testuser@example.com       | Test@5678  |
+    
 
  # @InvalidCredentials
  # Scenario Outline: Login with invalid credentials
