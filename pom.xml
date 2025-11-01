@@ -12,13 +12,14 @@
     <selenium.version>4.38.0</selenium.version>
     <slf4j.version>2.1.0-alpha1</slf4j.version>
     <commonio.version>2.20.0</commonio.version>
+    <jna.version>5.17.0</jna.version>
+    <extentreports.cucumber7.adapter.version>1.14.0</extentreports.cucumber7.adapter.version>
+    <extentreports.version>5.1.2</extentreports.version>
     <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
     <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
     <maven.compiler.source.version>21</maven.compiler.source.version>
     <maven.compiler.target.version>21</maven.compiler.target.version>
-    <extentreports.cucumber7.adapter.version>1.14.0</extentreports.cucumber7.adapter.version>
-    <extentreports.version>5.1.2</extentreports.version>
-    <jna.version>5.17.0</jna.version>
+
   </properties>
 
   <dependencies>
