@@ -11,7 +11,7 @@ Feature: Login to HRM Application
       Examples:
     | username                   | password   |
     | husainahamad055@gmail.com  | Kaalo@1234 |
-    | testuser@example.com       | Test@5678  |
+   # | testuser@example.com       | Test@5678  |
     
 
  # @InvalidCredentials

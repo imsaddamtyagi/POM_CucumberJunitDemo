@@ -14,11 +14,13 @@ public class WaitUtils {
     private static final int DEFAULT_TIMEOUT = 15;
     private static final int DEFAULT_POLLING = 500;
 
-    public static WebElement fluentWait(By locator) {
+    public static WebElement fluentWait(By locator) 
+    {
         return fluentWait(locator, DEFAULT_TIMEOUT);
     }
 
-    public static WebElement fluentWait(By locator, int timeoutSeconds) {
+    public static WebElement fluentWait(By locator, int timeoutSeconds) 
+    {
         WebDriver driver = HelperClass.getDriver();
         final int[] successCount = {0};
         long startTime = System.currentTimeMillis();

@@ -45,8 +45,8 @@ public class LoginPageActions {
 
     // 🔐 Full login sequence
     public void login(String strUserName, String strPassword) {
-    	clickProceed();
-    	clickProceedLink();
+    	 //clickProceed();
+    	//clickProceedLink();
         setUserName(strUserName);
         setPassword(strPassword);
         clickLogin();
