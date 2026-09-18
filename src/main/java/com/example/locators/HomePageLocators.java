@@ -4,5 +4,5 @@ import org.openqa.selenium.By;
 
 public class HomePageLocators {
 
-    public static final By homePageUserName = By.xpath("//*[@id='top-header-menu']/div[2]/span[1]");
+	public static final By homePageUserName = By.xpath("//h1[contains(@class,'_greeting')]");
 }

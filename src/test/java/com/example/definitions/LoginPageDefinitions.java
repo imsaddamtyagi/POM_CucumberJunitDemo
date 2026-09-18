@@ -34,7 +34,7 @@ public class LoginPageDefinitions {
     @Then("User should be able to login successfully and new page open")
     public void verifyLogin() {
     	String userText = objHomePage.getHomePageText();
-    	String expectedText = "Mohd Ahmad";
+    	String expectedText = "Mohd";
     	Assertions.assertTrue(userText.contains(expectedText), "Homepage did not contain expected text!");
 
     }
